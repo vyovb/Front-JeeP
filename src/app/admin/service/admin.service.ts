@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserStorageService } from '../../services/storage/user-storage.service';
-const BASIC_URL = "http://localhost:8080/";
+const BASIC_URL = "http://localhost:8080";
 
 @Injectable({
   providedIn: 'root'
@@ -57,7 +57,16 @@ export class AdminService {
     })
   }
 
-
+  getplacedOrders():Observable<any>{
+    return this.http.get(BASIC_URL + 'api/admin/placedOrders',{
+      headers:this.createAuthorizationHeader(),
+    })
+  }
+  changeOrderStatus(orderId:number,status:string):Observable<any>{
+    return this.http.get(BASIC_URL + 'api/admin/${orderId}/${status}',{
+      headers:this.createAuthorizationHeader(),
+    })
+  }
 
 
 

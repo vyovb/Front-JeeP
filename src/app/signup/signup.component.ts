@@ -24,8 +24,8 @@ export class SignupComponent implements OnInit {
     this.signupForm = this.fb.group({
       name: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
-      Password: [null, [Validators.required]],
-      ConfirmPassword: [null, [Validators.required]],
+      password: [null, [Validators.required]],
+      confirmPassword: [null, [Validators.required]],
     });
   }
 
@@ -34,14 +34,17 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log("----------------------- Button works");
-    const Password = this.signupForm.get('Password')?.value;
-    const ConfirmPassword = this.signupForm.get('ConfirmPassword')?.value;
+    if (this.signupForm.invalid) {
+      return;
+    }
 
-    if (Password !== ConfirmPassword) {
+    const password = this.signupForm.get('password')?.value;
+    const confirmPassword = this.signupForm.get('confirmPassword')?.value;
+
+    if (password !== confirmPassword) {
       this.snackBar.open('Passwords do not match.', 'Close', { 
         duration: 5000, 
-        panelClass: 'error-snackBar' 
+        panelClass: 'error-snackbar' 
       });
       return;
     }

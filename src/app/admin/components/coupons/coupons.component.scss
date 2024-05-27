@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+    
+    /* Style the card */
+    mat-card {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    }
+    
+    /* Style the table */
+    table {
+    width: 100%;
+    }
+    /* Style the table header */
+    th.mat-header-cell {
+    font-weight: bolder;
+    
+    padding: 10px;
+    
+    color:#db9b9b;
+    }
+    td.mat-cell,
+td.bold-cell {
+padding: 10px;
+
+}
+
+
+td.bold-cell {
+font-weight: bold;
+
+}
+
+.mat-elevation-z8 {
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mat-row:hover {
+    background-color:#db9b9b;
+    
+    }
+    
+
+    .mat-header-row {
+    background-color: bisque;
+    
+    }
+    
+   
+    .mat-paginator{
+    background-color: aliceblue;
+    border-radius: 0 0 10px 10px;
+    margin-top: 16px;
+    }

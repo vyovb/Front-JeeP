@@ -24,6 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "proxyConfig":"src/proxy.config.json",
             "outputPath": "dist/latest-appwith-module",
             "index": "src/index.html",
             "browser": "src/main.ts",
